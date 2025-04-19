@@ -19,10 +19,6 @@ Welcome to my STM32F4xx baremetal drivers development journey! This repository d
 - 🧠 Deep understanding of microcontroller internals
 - 📦 No dependency on vendor libraries
 
-## Project Status
-🚧 **Work in Progress** 🚧  
-This repository is actively being developed. Drivers are being implemented and tested sequentially. Check back regularly for updates!
-
 ## Getting Started
 While the drivers are under development, you can:
 1. Clone the repository:
