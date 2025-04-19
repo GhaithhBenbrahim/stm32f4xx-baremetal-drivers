@@ -1,0 +1,64 @@
+### IDE & Toolchain ###
+.settings/
+.metadata/
+.idea/
+.vscode/
+*.project
+*.cproject
+*.ioc             # STM32CubeMX project file
+
+### Build Directories ###
+[Dd]ebug/
+[Rr]elease/
+[Bb]uild/
+[Oo]bj/
+[Ll]og/
+
+### Compiled Files ###
+*.o
+*.ko
+*.obj
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.out
+
+### Dependency Files ###
+*.d
+*.d.*
+
+### Libraries ###
+*.a
+*.lib
+*.la
+*.so
+*.so.*
+*.dll
+*.dylib
+
+### Debug Symbols ###
+*.su
+*.idb
+*.pdb
+*.dSYM/
+
+### Executables ###
+*.exe
+*.app
+*.i*86
+*.x86_64
+
+### STM32CubeIDE Specific ###
+*.launch
+
+### System Files ###
+.DS_Store
+Thumbs.db
+
+### Local Development Files ###
+*.local
+*.swp
+*.swo
+*~
