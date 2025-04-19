@@ -30,58 +30,80 @@ git clone https://github.com/GhaithhBenbrahim/stm32f4xx-baremetal-drivers.git
 
 ## 🧠 API References
 
-### 🔌 GPIO APIs
+## 🔌 GPIO APIs
 
-#### Clock Configuration
-##### GPIO Peripheral Clock Control
-`void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)`  
+## Clock Configuration
+### GPIO Peripheral Clock Control
+```c
+void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
+``` 
 Enables/disables clock for specified GPIO port  
 **Parameters:**  
 - `pGPIOx`: GPIO port (GPIOA, GPIOB, etc.)  
 - `EnorDi`: ENABLE or DISABLE  
 
-#### Initialization
-##### GPIO Initialization  
-`void GPIO_Init(GPIO_Handle_t *pGPIOHandle)`  
+## Initialization
+### GPIO Initialization  
+```c
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
+``` 
 Configures GPIO pin with specified settings  
 
-##### GPIO Deinitialization  
-`void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)`  
+### GPIO Deinitialization  
+```c
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);
+``` 
 Resets all registers for specified GPIO port  
 
-#### Input Operations
-##### Read Input Pin  
-`uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)`  
+## Input Operations
+### Read Input Pin  
+```c
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
+``` 
 Returns digital value (0/1) from specified pin  
 
-##### Read Input Port  
-`uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)`  
+### Read Input Port  
+```c
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
+```  
 Returns 16-bit value of entire port  
 
-#### Output Operations
-##### Write Output Pin  
-`void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value)`  
+## Output Operations
+### Write Output Pin  
+```c
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
+``` 
 Sets output pin high (1) or low (0)  
 
-##### Write Output Port  
-`void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value)`  
+### Write Output Port  
+```c
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value);
+```  
 Writes 16-bit value to entire port  
 
-##### Toggle Output Pin  
-`void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)`  
+### Toggle Output Pin  
+```c
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
+``` 
 Inverts current pin state  
 
-#### Interrupt Handling
-##### Configure Interrupt  
-`void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)`  
+## Interrupt Handling
+### Configure Interrupt  
+```c
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
+``` 
 Enables/disables interrupt for specified IRQ  
 
-##### Set Interrupt Priority  
-`void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority)`  
+### Set Interrupt Priority  
+```c
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
+``` 
 Configures interrupt priority level (0-15)  
 
-##### Handle Interrupt  
-`void GPIO_IRQHandling(uint8_t PinNumber)`  
+### Handle Interrupt  
+```c
+void GPIO_IRQHandling(uint8_t PinNumber);
+``` 
 Clears pending interrupt flag  
 
 
