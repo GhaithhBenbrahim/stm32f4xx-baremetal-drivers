@@ -1,2 +1,5 @@
+*.s linguist-detectable
+*.c linguist-detectable
 Makefile linguist-vendored
 *.ld linguist-vendored
+* linguist-vendored
