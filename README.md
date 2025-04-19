@@ -26,41 +26,64 @@ This repository documents my learning journey in developing baremetal drivers fo
 For fellow learners:
 ```bash
 git clone https://github.com/GhaithhBenbrahim/stm32f4xx-baremetal-drivers.git
+````
 
 ## 🧠 API References
 
 ### 🔌 GPIO APIs
 
-#### `void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);`
+```c
+void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
+```
 Enables or disables the peripheral clock for the specified GPIO port.
 
-#### `void GPIO_Init(GPIO_Handle_t *pGPIOHandle);`
+```c
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
+````
 Initializes a GPIO pin with the provided configuration parameters (mode, speed, pull-up/down, etc.).
 
-#### `void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);`
+```c
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);
+````
 Resets all GPIO registers of the given port to their default values.
 
-#### `uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);`
+```c
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
+````
 Reads and returns the logic level (0 or 1) from a specific input pin.
 
-#### `uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);`
+```c
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
+````
 Reads the logic levels of all 16 pins of the input port and returns the result as a 16-bit value.
 
-#### `void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value);`
+```c
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
+````
 Writes a logic level (0 or 1) to a specific output pin.
 
-#### `void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value);`
+```c
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value);
+````
 Writes a 16-bit value to the entire GPIO output port at once.
 
-#### `void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);`
+```c
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
+````
 Toggles the current state (0 → 1 or 1 → 0) of a given output pin.
 
-#### `void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);`
+```c
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
+````
 Enables or disables the interrupt for a specific IRQ number at the NVIC level.
 
-#### `void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);`
+```c
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
+````
 Configures the interrupt priority level for a given IRQ number.
 
-#### `void GPIO_IRQHandling(uint8_t PinNumber);`
+```c
+void GPIO_IRQHandling(uint8_t PinNumber);
+````
 Handles the interrupt for a specific GPIO pin (clears the pending bit).
 
