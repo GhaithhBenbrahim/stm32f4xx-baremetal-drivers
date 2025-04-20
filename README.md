@@ -37,8 +37,8 @@ All drivers are located in the `drivers` directory. Each driver's API is documen
 
 Below are quick examples showing how to use each driver. For complete API documentation, please refer to the comments in each driver's source files.
 
-
-## 💡 Example: LED Toggle
+## Basic GPIO Examples
+### 💡 Example: LED Toggle
 
 ```c
 #include "stm32f407xx.h"
