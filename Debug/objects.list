@@ -1,4 +1,4 @@
-"./Src/main.o"
+"./Src/002Led_Button.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"
 "./Startup/startup_stm32f407vgtx.o"
