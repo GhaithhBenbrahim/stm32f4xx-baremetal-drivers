@@ -68,6 +68,13 @@ int main(void) {
 }
 ```
 
+## 🤝 How to Contribute
+- Report bugs via Issues
+- Submit PRs with:
+  - Hardware-tested code
+  - Doxygen documentation
+  - Example usage (if adding features)
+
 ## 📜 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
