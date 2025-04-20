@@ -128,16 +128,7 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
 void GPIO_IRQHandling(uint8_t PinNumber);
 
-//some generic macros
 
-#define ENABLE 				1
-#define DISABLE 			0
-#define SET 				ENABLE
-#define RESET 				DISABLE
-#define GPIO_PIN_SET        SET
-#define GPIO_PIN_RESET      RESET
-#define FLAG_RESET          RESET
-#define FLAG_SET 			SET
 
 
 #endif /* INC_STM32F407XX_GPIO_DRIVER_H_ */

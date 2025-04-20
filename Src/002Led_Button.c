@@ -31,8 +31,8 @@ int main(void)
 
 
 
-	GPIO_PeriClockControl(GPIOD, ENABLE);
-	GPIO_PeriClockControl(GPIOA, ENABLE);
+	/*GPIO_PeriClockControl(GPIOD, ENABLE);
+	GPIO_PeriClockControl(GPIOA, ENABLE);*/
 
 	GPIO_Init(&GPIO_Led);
 	GPIO_Init(&GPIO_Button);
