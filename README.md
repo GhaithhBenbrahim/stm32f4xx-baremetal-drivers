@@ -2,7 +2,8 @@
 
 ![STM32](https://img.shields.io/badge/STM32F4-Baremetal-03234B?logo=stmicroelectronics)
 ![Status](https://img.shields.io/badge/Status-Active_Development-yellow)
-![Hardware](https://img.shields.io/badge/Board-STM32F4xx-blueviolet)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Hardware](https://img.shields.io/badge/Board-STM32F407G--DISC1-blueviolet)
 
 ## Introduction
 
@@ -65,3 +66,8 @@ int main(void) {
     }
     return 0;
 }
+```
+
+## 📜 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
