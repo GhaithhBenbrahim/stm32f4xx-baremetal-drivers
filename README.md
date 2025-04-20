@@ -56,8 +56,7 @@ int main(void) {
     GPIO_Led.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
     GPIO_Led.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
     GPIO_Led.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
-
-    GPIO_PeriClockControl(GPIOD, ENABLE);
+   
     GPIO_Init(&GPIO_Led);
 
     while(1) {
@@ -65,6 +64,57 @@ int main(void) {
         delay();
     }
     return 0;
+}
+```
+## EXTI Button Interrupt Example
+
+This example shows how to:
+1. Configure GPIO pin as interrupt source (PA0 button)
+2. Set up falling-edge triggered interrupt
+3. Handle the interrupt to toggle an LED (PD12)
+```c
+/* LED Toggle with EXTI Button Interrupt Example */
+#include <string.h>
+#include "stm32f407xx.h"
+
+void delay(void) {
+    for(uint32_t i = 0; i<250000; i++); // Crude delay (~100ms @16MHz)
+}
+
+int main(void) {
+    GPIO_Handle_t GPIO_Led, GPIO_Button;
+    memset(&GPIO_Led, 0, sizeof(GPIO_Led));       // Clear LED config struct
+    memset(&GPIO_Button, 0, sizeof(GPIO_Button));  // Clear button config struct
+
+    /* LED (PD12) Configuration */
+    GPIO_Led.pGPIOx = GPIOD;
+    GPIO_Led.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12;
+    GPIO_Led.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
+    GPIO_Led.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+    GPIO_Led.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+    GPIO_Led.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+    GPIO_Init(&GPIO_Led);
+
+    /* Button (PA0) Configuration */
+    GPIO_Button.pGPIOx = GPIOA;
+    GPIO_Button.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_0;
+    GPIO_Button.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IT_FT; // Falling edge trigger
+    GPIO_Button.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+    GPIO_Button.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PU; // Internal pull-up
+    GPIO_Init(&GPIO_Button);
+
+    /* NVIC Configuration */
+    GPIO_IRQInterruptConfig(IRQ_NO_EXTI0, ENABLE);  // Enable EXTI0 interrupt
+    GPIO_IRQPriorityConfig(IRQ_NO_EXTI0, NVIC_IRQ_PRI6); // Set priority
+
+    while(1); // Main loop - all handled in ISR
+}
+
+/* EXTI0 Interrupt Handler */
+void EXTI0_IRQHandler(void) {
+    delay(); // Simple debounce
+    GPIO_IRQHandling(GPIO_PIN_NO_0); // Clear pending bit
+    GPIO_ToggleOutputPin(GPIOD, 12);  // Toggle LED
 }
 ```
 
