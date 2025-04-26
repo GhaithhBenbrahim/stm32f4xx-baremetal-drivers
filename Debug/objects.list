@@ -1,5 +1,6 @@
-"./Src/003Button_Interrupt.o"
+"./Src/005spi_master_tx_arduino.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"
 "./Startup/startup_stm32f407vgtx.o"
 "./drivers/Src/stm32f407xx_gpio_driver.o"
+"./drivers/Src/stm32f407xx_spi_driver.o"
