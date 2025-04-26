@@ -132,12 +132,12 @@ SPI master (STM32F407) to slave (Arduino Uno) demo with 3.3V/5V logic level conv
   - GND → GND
 - Button: PA0 to GND
 
-![Wiring Diagram](images/circuit.png)
+![Wiring Diagram](images/Wiring Diagram.png)
 
 ### Signal Analysis
 Logic analyzer capture of STM32 SPI pins during transmission:
 
-![SPI Signals](images/logic_analyzer.png)
+![SPI Signals](images/SPI Signals.png)
 *NSS (Yellow), SCK (Blue), MOSI (Purple)*
 
 ### Code
