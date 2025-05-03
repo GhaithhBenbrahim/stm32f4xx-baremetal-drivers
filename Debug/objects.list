@@ -1,7 +1,6 @@
-"./Src/011i2c_slave_tx.o"
+"./Src/008spi_tx_it.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"
 "./Startup/startup_stm32f407vgtx.o"
 "./drivers/Src/stm32f407xx_gpio_driver.o"
-"./drivers/Src/stm32f407xx_i2c_driver.o"
 "./drivers/Src/stm32f407xx_spi_driver.o"
