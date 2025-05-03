@@ -657,7 +657,7 @@ int main(void)
 }
 ```
 ### Example Behavior
-![Application Behavior Screenshot](images/SWVI2C.png.png)  
+![Application Behavior Screenshot](images/SWVI2C.png)  
 *SWV terminal showing button-triggered I2C communications*
 
 ### Signal Verification
