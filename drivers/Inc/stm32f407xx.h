@@ -197,21 +197,21 @@ typedef struct {
 } SPI_RegDef_t;
 
 /*
- * peripheral register definition structure for I2C
+ * Peripheral register definition structure for I2C
  */
 typedef struct
 {
-  __vo uint32_t CR1;        /*!< TODO,     										Address offset: 0x00 */
-  __vo uint32_t CR2;        /*!< TODO,     										Address offset: 0x04 */
-  __vo uint32_t OAR1;       /*!< TODO,     										Address offset: 0x08 */
-  __vo uint32_t OAR2;       /*!< TODO,     										Address offset: 0x0C */
-  __vo uint32_t DR;         /*!< TODO,     										Address offset: 0x10 */
-  __vo uint32_t SR1;        /*!< TODO,     										Address offset: 0x14 */
-  __vo uint32_t SR2;        /*!< TODO,     										Address offset: 0x18 */
-  __vo uint32_t CCR;        /*!< TODO,     										Address offset: 0x1C */
-  __vo uint32_t TRISE;      /*!< TODO,     										Address offset: 0x20 */
-  __vo uint32_t FLTR;       /*!< TODO,     										Address offset: 0x24 */
-}I2C_RegDef_t;
+  __vo uint32_t CR1;        /*!< I2C Control Register 1,                          Address offset: 0x00 */
+  __vo uint32_t CR2;        /*!< I2C Control Register 2,                          Address offset: 0x04 */
+  __vo uint32_t OAR1;       /*!< I2C Own Address Register 1,                      Address offset: 0x08 */
+  __vo uint32_t OAR2;       /*!< I2C Own Address Register 2,                      Address offset: 0x0C */
+  __vo uint32_t DR;         /*!< I2C Data Register,                               Address offset: 0x10 */
+  __vo uint32_t SR1;        /*!< I2C Status Register 1,                           Address offset: 0x14 */
+  __vo uint32_t SR2;        /*!< I2C Status Register 2,                           Address offset: 0x18 */
+  __vo uint32_t CCR;        /*!< I2C Clock Control Register,                      Address offset: 0x1C */
+  __vo uint32_t TRISE;      /*!< I2C TRISE Register (Maximum rise time),          Address offset: 0x20 */
+  __vo uint32_t FLTR;       /*!< I2C Filter Register (Digital noise filter),      Address offset: 0x24 */
+} I2C_RegDef_t;
 
 
 /*
