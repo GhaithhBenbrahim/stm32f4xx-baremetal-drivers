@@ -6,6 +6,7 @@
  */
 
 #include "stm32f407xx_i2c_driver.h"
+#include "stm32f407xx_rcc_driver.h"
 #include <stddef.h>
 
 static void  I2C_GenerateStartCondition(I2C_RegDef_t *pI2Cx);
@@ -164,7 +165,16 @@ void I2C_PeriClockControl(I2C_RegDef_t *pI2Cx, uint8_t EnorDi)
 	}
 	else
 	{
-		//TODO
+		if(pI2Cx == I2C1)
+		{
+			I2C1_PCLK_DI();
+		}else if (pI2Cx == I2C2)
+		{
+			I2C2_PCLK_DI();
+		}else if (pI2Cx == I2C3)
+		{
+			I2C3_PCLK_DI();
+		}
 	}
 
 }
@@ -267,7 +277,16 @@ void I2C_Init(I2C_Handle_t *pI2CHandle)
  */
 void I2C_DeInit(I2C_RegDef_t *pI2Cx)
 {
-
+    if(pI2Cx == I2C1)
+    {
+        I2C1_REG_RESET();
+    }else if (pI2Cx == I2C2)
+    {
+        I2C2_REG_RESET();
+    }else if (pI2Cx == I2C3)
+    {
+        I2C3_REG_RESET();
+    }
 }
 
 
@@ -731,7 +750,7 @@ void I2C_EV_IRQHandling(I2C_Handle_t *pI2CHandle)
 	if(temp1 && temp3)
 	{
 		// interrupt is generated because of ADDR event
-		I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+		I2C_ClearADDRFlag(pI2CHandle);
 	}
 
 	temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_BTF);
