@@ -1,4 +1,4 @@
-"./Src/010i2c_master_rx_IT.o"
+"./Src/011i2c_slave_tx.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"
 "./Startup/startup_stm32f407vgtx.o"

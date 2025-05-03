@@ -65,27 +65,10 @@ void I2C1_Inits(void)
 
 }
 
-void GPIO_ButtonInit(void)
-{
-	GPIO_Handle_t GPIOBtn;
-
-	//this is btn gpio configuration
-	GPIOBtn.pGPIOx = GPIOA;
-	GPIOBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_0;
-	GPIOBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
-	GPIOBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
-	GPIOBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
-
-	GPIO_Init(&GPIOBtn);
-
-}
-
 
 int main(void)
 {
 
-
-	GPIO_ButtonInit();
 
 	//i2c pin inits
 	I2C1_GPIOInits();
