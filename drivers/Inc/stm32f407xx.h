@@ -346,16 +346,16 @@ typedef struct
 /*
  *  Macros to reset SPIx peripherals
  */
-#define SPI1_REG_RESET()          do{ (RCC->APB2RSTR |= (1 << 12)); (RCC->AHB1RSTR &= ~(1 << 12)); }while(0)
-#define SPI2_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 14)); (RCC->AHB1RSTR &= ~(1 << 14)); }while(0)
-#define SPI3_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 15)); (RCC->AHB1RSTR &= ~(1 << 15)); }while(0)
+#define SPI1_REG_RESET()          do{ (RCC->APB2RSTR |= (1 << 12)); (RCC->APB1RSTR &= ~(1 << 12)); }while(0)
+#define SPI2_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 14)); (RCC->APB1RSTR &= ~(1 << 14)); }while(0)
+#define SPI3_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 15)); (RCC->APB1RSTR &= ~(1 << 15)); }while(0)
 
 /*
  *  Macros to reset I2Cx peripherals
  */
-#define I2C1_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 21)); (RCC->AHB1RSTR &= ~(1 << 21)); }while(0)
-#define I2C2_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 22)); (RCC->AHB1RSTR &= ~(1 << 22)); }while(0)
-#define I2C3_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 23)); (RCC->AHB1RSTR &= ~(1 << 23)); }while(0)
+#define I2C1_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 21)); (RCC->APB1RSTR &= ~(1 << 21)); }while(0)
+#define I2C2_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 22)); (RCC->APB1RSTR &= ~(1 << 22)); }while(0)
+#define I2C3_REG_RESET()          do{ (RCC->APB1RSTR |= (1 << 23)); (RCC->APB1RSTR &= ~(1 << 23)); }while(0)
 
 /*
  *  returns port code for given GPIOx base address
@@ -539,7 +539,7 @@ typedef struct
 
 #include "stm32f407xx_gpio_driver.h"
 #include "stm32f407xx_spi_driver.h"
-
+#include "stm32f407xx_i2c_driver.h"
 
 
 #endif /* INC_STM32F407XX_H_ */
