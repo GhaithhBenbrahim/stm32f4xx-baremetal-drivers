@@ -874,7 +874,7 @@ void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle,uint8_t AppEv)
 ```
 
 ### Example with IT Behavior
-![Application Behavior Screenshot](images/SWVI2C-IT.png.png)  
+![Application Behavior Screenshot](images/SWVI2C-IT.png)  
 *SWV terminal showing button-triggered I2C communications*
 
 
