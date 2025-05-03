@@ -666,13 +666,6 @@ int main(void)
 
 ### I2C Master Communication with Interrupt 
 ```c
-/*
- * 010i2c_rx_master_IT.c
- *
- *  Created on: May 1, 2025
- *      Author: benbr
- */
-
 #include<stdio.h>
 #include<string.h>
 #include "stm32f407xx.h"
