@@ -6,7 +6,7 @@
  */
 
 #include "stm32f407xx_i2c_driver.h"
-#include "stm32f407xx_rcc_driver.h"
+
 #include <stddef.h>
 
 static void  I2C_GenerateStartCondition(I2C_RegDef_t *pI2Cx);
@@ -383,6 +383,8 @@ void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle,uint8_t *pRxBuffer, uint8_t 
 
 		//read data in to buffer
 		*pRxBuffer = pI2CHandle->pI2Cx->DR;
+
+		return;
 
 	}
 

@@ -5,13 +5,6 @@
  *      Author: benbr
  */
 
-/*
- * 010i2c_rx_master_IT.c
- *
- *  Created on: May 1, 2025
- *      Author: benbr
- */
-
 #include<stdio.h>
 #include<string.h>
 #include "stm32f407xx.h"
@@ -21,9 +14,9 @@ extern void initialise_monitor_handles();
 //Flag variable
 uint8_t rxComplt = RESET;
 
-#define MY_ADDR 0x61;
+#define MY_ADDR 0x61
 
-#define SLAVE_ADDR  0x69
+#define SLAVE_ADDR  0x68
 
 void delay(void)
 {
@@ -114,6 +107,9 @@ int main(void)
 
 	printf("Application is running\n");
 
+	GPIO_PeriClockControl(GPIOB, ENABLE);
+
+
 	GPIO_ButtonInit();
 
 	//i2c pin inits
@@ -147,7 +143,8 @@ int main(void)
 
 		while(I2C_MasterReceiveDataIT(&I2C1Handle,&len,1,SLAVE_ADDR,I2C_ENABLE_SR)!= I2C_READY);
 
-
+		while(rxComplt != SET);
+		rxComplt = RESET;
 
 		commandcode = 0x52;
 		while(I2C_MasterSendDataIT(&I2C1Handle,&commandcode,1,SLAVE_ADDR,I2C_ENABLE_SR) != I2C_READY);
